@@ -14,7 +14,93 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      events: {
+        Row: {
+          created_at: string
+          description: string | null
+          event_date: string | null
+          id: number
+          location: string | null
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          event_date?: string | null
+          id?: number
+          location?: string | null
+          name: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          event_date?: string | null
+          id?: number
+          location?: string | null
+          name?: string
+        }
+        Relationships: []
+      }
+      parishes: {
+        Row: {
+          church_info: string | null
+          contact_details: string | null
+          created_at: string
+          elder_in_charge: string | null
+          id: number
+          name: string
+          parish_direction: string | null
+          parish_secretary: string | null
+          physical_address: string | null
+          serial_number: number | null
+        }
+        Insert: {
+          church_info?: string | null
+          contact_details?: string | null
+          created_at?: string
+          elder_in_charge?: string | null
+          id?: number
+          name: string
+          parish_direction?: string | null
+          parish_secretary?: string | null
+          physical_address?: string | null
+          serial_number?: number | null
+        }
+        Update: {
+          church_info?: string | null
+          contact_details?: string | null
+          created_at?: string
+          elder_in_charge?: string | null
+          id?: number
+          name?: string
+          parish_direction?: string | null
+          parish_secretary?: string | null
+          physical_address?: string | null
+          serial_number?: number | null
+        }
+        Relationships: []
+      }
+      prayer_requests: {
+        Row: {
+          created_at: string
+          id: number
+          name: string | null
+          request: string
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          name?: string | null
+          request: string
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          name?: string | null
+          request?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
