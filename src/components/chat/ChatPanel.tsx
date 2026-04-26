@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChatMessage } from "./ChatMessage";
 import { ChatInput } from "./ChatInput";
 import { streamChat, ChatMsg } from "@/lib/chat";
-import { Sparkles } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
 
 const WELCOME =
   "Hello and welcome! 👋 I'm your ESOMS Church assistant. How can I help you today with prayer requests, service times, Bible questions, or any spiritual guidance you need?";
