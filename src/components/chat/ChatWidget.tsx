@@ -124,7 +124,7 @@ export const ChatWidget = () => {
               role="dialog"
               aria-label="ESOMS Church Assistant"
             >
-              <ChatPanel />
+              <ChatPanel onClose={() => setOpen(false)} />
             </motion.div>
           </>
         )}
