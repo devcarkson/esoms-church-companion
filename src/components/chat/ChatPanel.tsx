@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChatMessage } from "./ChatMessage";
 import { ChatInput } from "./ChatInput";
 import { streamChat, ChatMsg } from "@/lib/chat";
-import { Sparkles } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
 
 const WELCOME =
   "Hello and welcome! 👋 I'm your ESOMS Church assistant. How can I help you today with prayer requests, service times, Bible questions, or any spiritual guidance you need?";
@@ -16,7 +16,7 @@ const SUGGESTIONS = [
   "How to join",
 ];
 
-export const ChatPanel = () => {
+export const ChatPanel = ({ onClose }: { onClose?: () => void }) => {
   const [messages, setMessages] = useState<ChatMsg[]>([]);
   const [streaming, setStreaming] = useState(false);
   const scrollerRef = useRef<HTMLDivElement>(null);
@@ -73,7 +73,7 @@ export const ChatPanel = () => {
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-bubble">
           <Sparkles className="h-5 w-5" />
         </div>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <p className="truncate font-display text-lg font-semibold leading-none text-foreground">
             ESOMS Assistant
           </p>
@@ -82,6 +82,16 @@ export const ChatPanel = () => {
             Here for you, 24/7
           </p>
         </div>
+        {onClose && (
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close chat"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        )}
       </div>
 
       {/* Messages */}
