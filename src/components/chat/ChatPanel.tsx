@@ -16,7 +16,7 @@ const SUGGESTIONS = [
   "How to join",
 ];
 
-export const ChatPanel = () => {
+export const ChatPanel = ({ onClose }: { onClose?: () => void }) => {
   const [messages, setMessages] = useState<ChatMsg[]>([]);
   const [streaming, setStreaming] = useState(false);
   const scrollerRef = useRef<HTMLDivElement>(null);
