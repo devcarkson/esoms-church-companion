@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
-import { Sparkles } from "lucide-react";
 
 interface Props {
   role: "user" | "assistant";
@@ -18,11 +17,11 @@ export const ChatMessage = ({ role, content, streaming }: Props) => {
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className={`flex gap-3 ${isUser ? "justify-end" : "justify-start"}`}
     >
-      {!isUser && (
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-bubble">
-          <Sparkles className="h-4 w-4" />
-        </div>
-      )}
+       {!isUser && (
+         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-bubble">
+           <img src="/chruch-logo.png" alt="ESOMS Church Logo" className="h-4 w-4" />
+         </div>
+       )}
 
       <div
         className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-bubble ${

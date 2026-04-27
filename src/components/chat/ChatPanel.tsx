@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChatMessage } from "./ChatMessage";
 import { ChatInput } from "./ChatInput";
 import { streamChat, ChatMsg } from "@/lib/chat";
-import { Sparkles, X } from "lucide-react";
+import { X } from "lucide-react";
 
 const WELCOME =
   "Hello and welcome! 👋 I'm your ESOMS Church assistant. How can I help you today with prayer requests, service times, Bible questions, or any spiritual guidance you need?";
@@ -68,31 +68,31 @@ export const ChatPanel = ({ onClose }: { onClose?: () => void }) => {
 
   return (
     <div className="flex h-full flex-col bg-gradient-surface">
-      {/* Header */}
-      <div className="flex items-center gap-3 border-b border-border bg-card/80 px-5 py-4 backdrop-blur">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-bubble">
-          <Sparkles className="h-5 w-5" />
-        </div>
-        <div className="min-w-0 flex-1">
-          <p className="truncate font-display text-lg font-semibold leading-none text-foreground">
-            ESOMS Assistant
-          </p>
-          <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Here for you, 24/7
-          </p>
-        </div>
-        {onClose && (
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close chat"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        )}
-      </div>
+       {/* Header */}
+       <div className="flex items-center gap-3 border-b border-border bg-card/80 px-5 py-4 backdrop-blur">
+         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-bubble">
+           <img src="/chruch-logo.png" alt="ESOMS Church Logo" className="h-5 w-5" />
+         </div>
+         <div className="min-w-0 flex-1">
+           <p className="truncate font-display text-lg font-semibold leading-none text-foreground">
+             ESOMS Assistant
+           </p>
+           <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+             Here for you, 24/7
+           </p>
+         </div>
+         {onClose && (
+           <button
+             type="button"
+             onClick={onClose}
+             aria-label="Close chat"
+             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+           >
+             <X className="h-5 w-5" />
+           </button>
+         )}
+       </div>
 
       {/* Messages */}
       <div

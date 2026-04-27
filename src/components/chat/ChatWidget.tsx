@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
 import { ChatPanel } from "./ChatPanel";
 
 export const ChatWidget = () => {
@@ -70,27 +70,27 @@ export const ChatWidget = () => {
         >
           <span className="absolute inset-0 -z-10 rounded-full bg-gradient-primary opacity-50 blur-xl" />
           <AnimatePresence mode="wait" initial={false}>
-            {open ? (
-              <motion.span
-                key="x"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X className="h-6 w-6" />
-              </motion.span>
-            ) : (
-              <motion.span
-                key="msg"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <MessageCircle className="h-6 w-6" />
-              </motion.span>
-            )}
+           {open ? (
+             <motion.span
+               key="x"
+               initial={{ rotate: -90, opacity: 0 }}
+               animate={{ rotate: 0, opacity: 1 }}
+               exit={{ rotate: 90, opacity: 0 }}
+               transition={{ duration: 0.2 }}
+             >
+               <X className="h-6 w-6" />
+             </motion.span>
+           ) : (
+             <motion.span
+               key="msg"
+               initial={{ rotate: 90, opacity: 0 }}
+               animate={{ rotate: 0, opacity: 1 }}
+               exit={{ rotate: -90, opacity: 0 }}
+               transition={{ duration: 0.2 }}
+             >
+               <img src="/chruch-logo.png" alt="ESOMS Church Logo" className="h-6 w-6" />
+             </motion.span>
+           )}
           </AnimatePresence>
         </motion.button>
       </div>
